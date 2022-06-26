@@ -1,0 +1,166 @@
+@use "/src/assets/styles/color.scss" as color;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Outfit:wght@300;400;600&family=Red+Hat+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
+
+$colors: (
+  primary: (
+    softBlue: hsl(215, 51%, 70%),
+    cyan: hsl(178, 100%, 50%),
+  ),
+  neutral: (
+    darkMain: hsl(217, 54%, 11%),
+    darkCard: hsl(216, 50%, 16%),
+    darkLine: hsl(215, 32%, 27%),
+  ),
+);
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Red Hat Mono", monospace;
+  font-family: "Outfit", sans-serif;
+}
+
+:root {
+  @each $color, $types in $colors {
+    @each $type, $value in $types {
+      --clr-#{$color}-#{$type}: #{$value};
+    }
+  }
+}
+
+body {
+  background-color: var(--clr-neutral-darkMain);
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  place-items: center;
+  gap: 5em;
+  .container-cardNtf {
+    background-color: var(--clr-neutral-darkCard);
+    @media (min-width: 376px) {
+      width: 25vw;
+      padding: 1.8em;
+    }
+
+    @media (min-width: 0px) and (max-width: 375px) {
+      width: 80vw;
+      padding: 1.2em;
+    }
+
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(auto, 4);
+    text-align: left;
+    box-shadow: 0px 30px 20px 0px var(--clr-neutral-darkMain);
+
+    gap: 1em;
+    .image-container {
+      width: auto;
+      text-align: center;
+      position: relative;
+
+      &::before {
+        content: url("images/icon-view.svg");
+        width: auto;
+        position: absolute;
+        inset: 40%;
+
+        z-index: 1;
+        display: none;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        // filter: opacity(0.3) drop-shadow(0 0 0 var(--clr-primary-cyan));
+      }
+    }
+    .details-ntf {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      h2#name-ntf {
+        color: white;
+        font-weight: 600;
+      }
+      p#description-ntf {
+        color: var(--clr-primary-softBlue);
+        font-weight: 300;
+        font-size: 18px;
+      }
+    }
+    .others-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      #value-ntf {
+        color: var(--clr-primary-cyan);
+        &::before {
+          content: url("images/icon-ethereum.svg");
+          position: relative;
+          top: 15%;
+        }
+      }
+      #time-release {
+        color: var(--clr-primary-softBlue);
+        &::before {
+          content: url("images/icon-clock.svg");
+          position: relative;
+          top: 15%;
+        }
+      }
+    }
+    hr#line-separator {
+      border: 0.02px solid var(--clr-neutral-darkLine);
+      border-radius: 10px;
+      margin: 0.3em 0em;
+    }
+    .author-ntf {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.2em;
+
+      #avatar-image {
+        width: auto;
+        position: relative;
+        top: 10%;
+        img {
+          width: 2.2em;
+          border: 2px solid white;
+          border-radius: 100%;
+        }
+      }
+      #creator-atributtion {
+        color: var(--clr-primary-softBlue);
+        span {
+          color: white;
+        }
+      }
+    }
+    *[type="interact"]:hover {
+      img {
+        filter: opacity(0.3) drop-shadow(0 0 0 var(--clr-primary-cyan));
+      }
+      &.image-container {
+        &::before {
+          display: block;
+        }
+      }
+      &#name-ntf {
+        color: var(--clr-primary-cyan);
+      }
+      &#name-creator {
+        color: var(--clr-primary-cyan);
+      }
+    }
+  }
+}
