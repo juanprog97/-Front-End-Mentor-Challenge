@@ -49,14 +49,14 @@ body {
 
 @media (min-width: 376px) {
   .container .container-cardNtf {
-    width: 20vw;
+    width: 22vw;
     padding: 1.8em;
   }
 }
 
 @media (min-width: 0px) and (max-width: 375px) {
   .container .container-cardNtf {
-    width: 82vw;
+    width: 80vw;
     padding: 1.2em;
   }
 }
