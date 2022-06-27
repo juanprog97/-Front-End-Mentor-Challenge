@@ -42,11 +42,11 @@ body {
   display: grid;
   grid-template-rows: repeat(2, auto);
   place-items: center;
-  gap: 5em;
+
   .container-cardNtf {
     background-color: var(--clr-neutral-darkCard);
     @media (min-width: 376px) {
-      width: 25vw;
+      width: 20vw;
       padding: 1.8em;
     }
 
@@ -86,7 +86,7 @@ body {
     .details-ntf {
       display: flex;
       flex-direction: column;
-      gap: 1.2em;
+      gap: 1.5em;
       h2#name-ntf {
         color: white;
         font-weight: 600;
@@ -146,7 +146,7 @@ body {
         }
       }
     }
-    *[type="interact"]:hover {
+    *[data="interact"]:hover {
       img {
         filter: opacity(0.3) drop-shadow(0 0 0 var(--clr-primary-cyan));
       }

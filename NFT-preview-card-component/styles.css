@@ -32,7 +32,6 @@ body {
   -ms-grid-rows: (auto)[2];
       grid-template-rows: repeat(2, auto);
   place-items: center;
-  gap: 5em;
 }
 
 .container .container-cardNtf {
@@ -50,7 +49,7 @@ body {
 
 @media (min-width: 376px) {
   .container .container-cardNtf {
-    width: 25vw;
+    width: 20vw;
     padding: 1.8em;
   }
 }
@@ -91,7 +90,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.2em;
+  gap: 1.5em;
 }
 
 .container .container-cardNtf .details-ntf h2#name-ntf {
@@ -178,20 +177,20 @@ body {
   color: white;
 }
 
-.container .container-cardNtf *[type="interact"]:hover img {
+.container .container-cardNtf *[data="interact"]:hover img {
   -webkit-filter: opacity(0.3) drop-shadow(0 0 0 var(--clr-primary-cyan));
           filter: opacity(0.3) drop-shadow(0 0 0 var(--clr-primary-cyan));
 }
 
-.container .container-cardNtf *[type="interact"]:hover.image-container::before {
+.container .container-cardNtf *[data="interact"]:hover.image-container::before {
   display: block;
 }
 
-.container .container-cardNtf *[type="interact"]:hover#name-ntf {
+.container .container-cardNtf *[data="interact"]:hover#name-ntf {
   color: var(--clr-primary-cyan);
 }
 
-.container .container-cardNtf *[type="interact"]:hover#name-creator {
+.container .container-cardNtf *[data="interact"]:hover#name-creator {
   color: var(--clr-primary-cyan);
 }
 /*# sourceMappingURL=styles.css.map */
