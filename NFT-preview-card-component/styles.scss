@@ -46,7 +46,7 @@ body {
   .container-cardNtf {
     background-color: var(--clr-neutral-darkCard);
     @media (min-width: 376px) {
-      width: 22vw;
+      width: 21vw;
       padding: 1.8em;
     }
 
@@ -134,7 +134,7 @@ body {
         position: relative;
         top: 10%;
         img {
-          width: 2.2em;
+          width: 2em;
           border: 2px solid white;
           border-radius: 100%;
         }
